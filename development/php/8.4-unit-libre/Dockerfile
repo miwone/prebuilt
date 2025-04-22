@@ -6,7 +6,7 @@ RUN usermod -s /bin/bash www-data && \
     docker-php-serversideup-set-id www-data 1000:1000 && \
     docker-php-serversideup-set-file-permissions --owner 1000:1000 --service unit && \
     ##
-    echo "alias art='php artisan'" >> /var/www/.bashrc
+    echo "alias art='php artisan'" >> /var/www/.profile
 
 RUN install-php-extensions sqlsrv pdo_sqlsrv gd && \
     docker-php-serversideup-dep-install-debian git && \
