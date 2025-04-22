@@ -4,13 +4,15 @@ USER root
 
 RUN usermod -s /bin/bash www-data && \
     docker-php-serversideup-set-id www-data 1000:1000 && \
-    docker-php-serversideup-set-file-permissions --owner 1000:1000 --service unit
+    docker-php-serversideup-set-file-permissions --owner 1000:1000 --service unit && \
+    ##
+    echo "alias art='php artisan'" >> /home/www-data/.bashrc
 
 RUN install-php-extensions sqlsrv pdo_sqlsrv gd && \
-    docker-php-serversideup-dep-install-debian git
+    docker-php-serversideup-dep-install-debian git && \
 
-# Tambahin dependencies buat LibreOffice
-RUN apt-get update && apt-get install -y \
+    # LibreOffice
+    apt-get update && apt-get install -y \
     libreoffice \
     libxrender1 \
     libxt6 \
