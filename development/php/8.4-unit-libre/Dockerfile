@@ -19,6 +19,9 @@ RUN install-php-extensions sqlsrv pdo_sqlsrv gd && \
     libxext6 \
     libxinerama1 \
     fonts-dejavu \
+    # for github.com/spatie/pdf-to-text
+    poppler-utils
+    ##
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 USER www-data
