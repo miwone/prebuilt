@@ -1,4 +1,4 @@
-FROM serversideup/php:8.3-cli-alpine AS basebuilder
+FROM serversideup/php:8.3-cli AS basebuilder
 
 USER root
 ENV PATH="/composer/vendor/bin:$PATH"
