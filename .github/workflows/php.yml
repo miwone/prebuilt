@@ -12,6 +12,8 @@ on:
 permissions:
   contents: read
   packages: write
+env:
+  GHCR_IMAGE: ghcr.io/${{ github.repository }}
 jobs:
   push:
     name: "php_${{ matrix.tag }}"
@@ -40,4 +42,4 @@ jobs:
           file: ./development/php/${{ matrix.tag }}/Dockerfile
           push: true
           tags: |
-            ghcr.io/khilmeee/prebuilt-dev:php_${{ matrix.tag }}
+            ${{ env.GHCR_IMAGE }}-dev:php_${{ matrix.tag }}

@@ -12,6 +12,9 @@ on:
 permissions:
   contents: read
   packages: write
+
+env:
+  GHCR_IMAGE: ghcr.io/${{ github.repository }}
 jobs:
   push:
     name: "mssql-fts"
@@ -34,4 +37,4 @@ jobs:
           file: ./development/mssql-fts/Dockerfile
           push: true
           tags: |
-            ghcr.io/khilmeee/prebuilt-dev:mssql-fts
+            ${{ env.GHCR_IMAGE }}-dev:mssql-fts
