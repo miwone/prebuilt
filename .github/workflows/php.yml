@@ -24,6 +24,7 @@ jobs:
         tag:
           - 8.4-unit-libre
           - 8.4-unit-base
+          - 8.3-cli-phpacker
     steps:
       - uses: actions/checkout@v3
       # Setup QEMU for ARM64 Build
