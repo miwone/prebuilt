@@ -22,7 +22,9 @@ jobs:
         tag:
           - 8.4-unit-libre
           - 8.4-unit-base
+          - 8.4-unit-essentials-ext
           - 8.3-unit-base
+          - 8.3-unit-essentials-ext
           - 8.3-cli-phpacker
           - 8.3-cli-alpine-phpacker
     steps:
